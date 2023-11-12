@@ -2,8 +2,8 @@ package dbe.ispd.diamniodio.VoteElectronique.models;
 
 import dbe.ispd.diamniodio.VoteElectronique.VoteElectroniqueApplication;
 import jakarta.persistence.*;
-
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 public class Electeur {
@@ -16,6 +16,8 @@ public class Electeur {
 
     @OneToOne(mappedBy = "electeur")
     private Vote vote;
+    @ManyToMany
+    private List<Role> roles;
 
     public Electeur(String name, String nationalId, Date dateOfBirth, String voterId, String password) {
         this.name = name;
@@ -26,6 +28,14 @@ public class Electeur {
     }
 
     public Electeur() {
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
     }
 
     public String getName() {
@@ -67,6 +77,7 @@ public class Electeur {
     public void setPassword(String password) {
         this.password = password;
     }
+
 
 
 }

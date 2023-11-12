@@ -20,7 +20,7 @@ public class ElecteurController {
 
     @GetMapping("/{id}")
     public Electeur findElecteur(@PathVariable String id){
-        return electeurService.findByVoterId(id);
+        return electeurService.findByLogin(id);
     }
 
     @PostMapping("/register")

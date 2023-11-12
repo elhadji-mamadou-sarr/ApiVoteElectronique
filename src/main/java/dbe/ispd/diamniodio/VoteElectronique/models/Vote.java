@@ -1,5 +1,6 @@
 package dbe.ispd.diamniodio.VoteElectronique.models;
 
+
 import jakarta.persistence.*;
 
 import java.util.Optional;

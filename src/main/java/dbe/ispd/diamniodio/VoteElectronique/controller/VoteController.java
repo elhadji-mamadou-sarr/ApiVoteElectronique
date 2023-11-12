@@ -8,16 +8,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api")
 public class VoteController {
 
     @Autowired
     private VoterService voterService;
 
-    @GetMapping("/votes")
+    @GetMapping("/results")
     public List<Vote> getVotes(){
         return voterService.getVotes();
     }
+
 
     @GetMapping("/votes/{candidatId}")
     public List<Vote> findVotesByCandidatId(@PathVariable String candidatId){
