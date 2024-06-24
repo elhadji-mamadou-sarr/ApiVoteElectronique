@@ -8,3 +8,4 @@ public interface ElecteurRepository extends JpaRepository<Electeur, String> {
     @Query("SELECT a FROM Electeur a where a.voterId=:voterId")
     public Electeur findByLogin(String voterId);
 }
+

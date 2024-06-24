@@ -28,7 +28,8 @@ public class AppSecurityFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("Debut filter App security");
+
+        System.out.println("--------------Debut filter App security----------------");
         HttpServletRequest httpServletRequest = (HttpServletRequest)servletRequest;
         HttpServletResponse httpServletResponse = (HttpServletResponse)servletResponse;
         String uri = httpServletRequest.getRequestURI();
@@ -42,6 +43,7 @@ public class AppSecurityFilter implements Filter {
                 break;
             }
         }
+
         if (!"/api/login".equals(uri)) {
             //demande authentification
             String autHeader = httpServletRequest.getHeader("Authorization");
@@ -93,6 +95,7 @@ public class AppSecurityFilter implements Filter {
             filterChain.doFilter(servletRequest, servletResponse);
             return;
         }
+
     }
 
 

@@ -19,6 +19,7 @@ public class LoginController {
 
     @PostMapping
     protected ResponseEntity login(@RequestBody UserLoginForm userLoginForm)  {
+
         System.out.println("authentification de "+userLoginForm);
         System.out.println("----------------------------------------"+userLoginForm.getVoterId());
         String login = userLoginForm.getVoterId();
@@ -34,4 +35,6 @@ public class LoginController {
         }
         return ResponseEntity.ok(new UserDetails(res, "Connecté avec succès"));
     }
+
+
 }

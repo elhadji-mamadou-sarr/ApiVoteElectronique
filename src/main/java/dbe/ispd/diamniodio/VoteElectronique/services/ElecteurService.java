@@ -22,7 +22,10 @@ public class ElecteurService {
     public Autorisation login(String login, String password){
         Electeur electeur = electeurRepository.findByLogin(login);
 
-        //String pwd = HashPassword.genSHA512(password);
+        //String pwd = HashPassword.gen
+        //
+        //
+        // SHA512(password);
         if (electeur.getPassword().equals(password)) {
             Autorisation resultat = new Autorisation();
             resultat.setIdToken(genToken());
